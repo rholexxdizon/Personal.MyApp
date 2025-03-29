@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Personal.MyApp.Data;
@@ -7,6 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Personal.MyApp.Controllers
 {
+    [Authorize] // Protect all actions in ItemsController
     public class ItemsController : Controller
     {
         private readonly MyAppContext _context;
